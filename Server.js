@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from "express";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
@@ -5,6 +6,7 @@ const app = express();
 
 // Define que usaremos json como metodo de adicionar post
 app.use(express.json());
+app.use(cors())
 
 //Porta do computador que vai rodar
 app.listen(3000);
